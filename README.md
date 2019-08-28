@@ -1,2 +1,2 @@
 # heyujs
-Heyu AngularJS-Python-Flask application wrapper
+Heyu AngularJS-Python-Flask application wrapper (under construction)
