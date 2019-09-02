@@ -1,0 +1,51 @@
+<md-dialog>
+  <form ng-cloak>
+    <md-dialog-content>
+        <div class="md-dialog-content" layout="column">
+        <h2>{{dialData.forCreation ? "New Schedule" : "Edit Schedule"}}</h2>
+        <md-input-container>
+            <label>Id</label>
+            <input type="text" placeholder="COFFE_MACHINE_MORNING" ng-pattern="/^[A-Z0-9_]+$/" ng-readonly="!dialData.forCreation" ng-model="dialData.editItem.id">
+        </md-input-container>
+        <md-input-container>
+            <label>Start Date</label>
+            <input type="text" placeholder="MM/DD" ng-pattern="/^[0-9]{2}/[0-9]{2}$/" ng-model="dialData.editItem.fromDate">
+        </md-input-container>
+        <md-input-container>
+            <label>End Date</label>
+            <input type="text" placeholder="MM/DD" ng-pattern="/^[0-9]{2}/[0-9]{2}$/" ng-model="dialData.editItem.toDate">
+        </md-input-container>
+        <md-input-container>
+            <label>Weekdays</label>
+            <input type="text" placeholder="smtwtfs" ng-pattern="/^[s.][m.][t.][w.][t.][f.][s.]$/" ng-model="dialData.editItem.weekdays">
+        </md-input-container>
+        <md-input-container>
+            <label>Start Time</label>
+            <input type="text" placeholder="hh:mm" ng-pattern="/^[0-9]{2}:[0-9]{2}$/" ng-model="dialData.editItem.fromTime">
+        </md-input-container>
+        <md-input-container>
+            <label>End Time</label>
+            <input type="text" placeholder="hh:mm" ng-pattern="/^[0-9]{2}:[0-9]{2}$/" ng-model="dialData.editItem.toTime">
+        </md-input-container>
+        <md-input-container>
+            <label>Start Macro</label>
+            <md-select ng-model="dialData.editItem.macroOn">
+                <md-option ng-repeat="macro in dialData.macros" ng-value="macro.id">{{macro.id}}</md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container>
+            <label>End Macro</label>
+            <md-select ng-model="dialData.editItem.macroOff">
+                <md-option ng-repeat="macro in dialData.macros" ng-value="macro.id">{{macro.id}}</md-option>
+            </md-select>
+        </md-input-container>
+        </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button class="md-raised" ng-click="editCANCEL(dialData)">CANCEL</md-button>
+      <md-button class="md-raised md-primary" ng-click="editOK(dialData)">OK</md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

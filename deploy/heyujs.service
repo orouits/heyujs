@@ -1,0 +1,13 @@
+[Unit]
+Description="uWSGI server instance for heyujs API"
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/html/heyujs/api/
+Environment=FLASK_ENV=test
+ExecStart=/usr/bin/uwsgi --ini /var/www/html/heyujs/api/uwsgi.ini
+
+[Install]
+WantedBy=multi-user.target

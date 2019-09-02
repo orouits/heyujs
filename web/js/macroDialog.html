@@ -1,0 +1,33 @@
+<md-dialog>
+  <form ng-cloak>
+    <md-dialog-content>
+        <div class="md-dialog-content" layout="column">
+        <h2>{{dialData.forCreation ? "New Macro" : "Edit Macro"}}</h2>
+        <md-input-container>
+            <label>Id</label>
+            <input type="text" placeholder="COFFE_MACHINE" ng-pattern="/^[A-Z0-9_]+$/" ng-readonly="!dialData.forCreation" ng-model="dialData.editItem.id">
+        </md-input-container>
+        <md-input-container>
+            <label>Misc</label>
+            <input type="text" placeholder="0" ng-pattern="/^[0]$/" ng-model="dialData.editItem.misc">
+        </md-input-container>
+        <md-input-container>
+            <label>Status</label>
+            <md-select ng-model="dialData.editItem.status">
+              <md-option ng-repeat="type in ['on', 'off']" ng-value="type">{{type}}</md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container>
+            <label>Unit Id</label>
+            <input type="text" placeholder="A1" ng-pattern="/^[A-P][0-9][1-6]?$/" ng-model="dialData.editItem.unitid">
+        </md-input-container>
+        </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button class="md-raised" ng-click="editCANCEL(dialData)">CANCEL</md-button>
+      <md-button class="md-raised md-primary" ng-click="editOK(dialData)">OK</md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
