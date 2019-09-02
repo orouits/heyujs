@@ -17,6 +17,7 @@ sudo rm -rf "${homedir}"
 # install
 
 sudo cp -r "${srcdir}" "${homedir}"
+sudo cp "${srcdir}/deploy/x10*" "${homedir}/api"
 sudo chown www-data:www-data -R "${homedir}"
 
 sudo cp ${srcdir}/deploy/heyujs.service /etc/systemd/system
