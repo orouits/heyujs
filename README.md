@@ -18,9 +18,14 @@ packages:
 - nginx-full
 - uwsgi-plugin-python3
 
-download zip from github and:
+download zip from github and go to deploy directory
 ```bash
 cd heyujs/deploy
+```
+change **server_name** of NGINX heyujs.conf file in order to avoid conflicts with existing
+
+lauch install
+```bash
 ./install.sh
 ```
 
