@@ -1,0 +1,30 @@
+<md-list>
+    <md-subheader><h3>Filter</h3></md-subheader>
+    <md-list-item>
+        <md-input-container>
+            <label>HOUSECODE</label>
+            <md-select ng-model="housecode" ng-change="filter()">
+              <md-option ng-repeat="code in ['A','B','C','D', 'E', 'F', 'G', 'H' , 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P']" ng-value="code">{{code}}</md-option>
+            </md-select>
+        </md-input-container>
+    </md-list-item>
+    <md-subheader><h3>Units</h3></md-subheader>
+    <md-list-item>
+        <md-grid-list layout-fill md-cols="16" md-cols-xs="4" md-cols-sm="8" md-cols-gt-sm="16" md-row-height="1:4" md-gutter="5px">
+            <md-grid-tile ng-repeat="unit in units" ng-style="{'background': (unit.on ? '#FFB3CD' : '#F0F0FF')}">
+                <md-grid-tile-header>
+                    <h3>{{unit.id}}</h3>
+                </md-grid-tile-header>
+                <div layout="column">
+                    <md-button class="md-icon-button md-primary" ng-click="onUnit(unit)"><md-icon>cast_connected</md-icon></md-button>
+                    <md-button class="md-icon-button" ng-click="offUnit(unit)"><md-icon>cast</md-icon></md-button>
+                    <md-slider-container>
+                        <md-slider ng-model="unit.level" min="0" max="100" id="level-slider" class="md-primary" md-vertical md-range></md-slider>
+                        <h4>{{unit.level}}</h4>
+                    </md-slider-container>
+                    <md-button class="md-icon-button md-warn" ng-click="configUnit(unit)"><md-icon>airplay</md-icon></md-button>
+                </div>
+           </md-grid-tile>
+        </md-grid-list>
+    </md-list-item>
+</md-list>

@@ -1,0 +1,33 @@
+<div layout="row" layout-xs="column" layout-fill>
+    <md-list>
+        <md-subheader><h3>Settings</h3></md-subheader>
+        <md-list-item ng-repeat="setting in settings">
+            <md-input-container>
+                <label>{{setting.id}}</label>
+                <input type="text" size="50" ng-model="setting.val" ng-change="change(setting)">
+                <div style="font-size:12px; color:grey">{{setting.comment}}</div>
+            </md-input-container>
+        </md-list-item>
+    </md-list>
+    <md-divider></md-divider>
+    <md-list flex>
+        <md-subheader><h3>Reset / Start / Stop engine</h3></md-subheader>
+        <md-list-item>
+            <md-button class="md-fab md-primary" ng-click="restart()"><md-icon>replay</md-icon></md-button>
+            <md-button class="md-fab md-primary" ng-click="start()"><md-icon>play_arrow</md-icon></md-button>
+            <md-button class="md-fab md-accent" ng-click="stop()"><md-icon>stop</md-icon></md-button>
+        </md-list-item>
+        <md-list-item>
+            <md-input-container>
+                <label>Output</label>
+                <textarea 
+                    readonly 
+                    rows="15" 
+                    cols="100" 
+                    style="font-family:monospace;" 
+                    ng-model="command.output">
+                </textarea>
+            </md-input-container>        
+        </md-list-item>
+    </md-list>
+</div>

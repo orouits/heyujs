@@ -1,0 +1,21 @@
+<md-list>
+    <md-list-item>
+        <md-input-container md-block>
+            <label>Command</label>
+            <input size="100" ng-model="command.cmd">
+        </md-input-container>
+        <md-button class="md-fab md-primary  md-secondary" ng-click="execute(command.cmd)"><md-icon>play_arrow</md-icon></md-button>
+    </md-list-item>
+    <md-list-item>
+        <md-input-container>
+            <label>Output</label>
+            <textarea 
+                readonly 
+                rows="15" 
+                cols="100" 
+                style="font-family:monospace;" 
+                ng-model="command.output">
+            </textarea>
+        </md-input-container>   
+    </md-list-item>
+</md-list>

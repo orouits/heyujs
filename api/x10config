@@ -1,0 +1,10 @@
+# SETTINGS
+TTY /dev/ttyUSB0 #
+LONGITUDE E02:07 #[degrees:minutes East or West of Greenwich]
+LATITUDE N48:47 #[degrees:minutes North or South of equator]
+START_ENGINE AUTO #
+HOUSECODE B #
+LOG_DIR /var/log/heyu #
+REPORT_PATH /etc/heyu #[127 characters max.]
+# ALIASES
+# END

@@ -1,0 +1,56 @@
+<div layout="row" layout-xs="column" layout-fill>
+    <md-list flex>
+        <md-subheader><h3>Schedules</h3></md-subheader>
+        <md-list-item class="md-3-line md-no-proxy" ng-click="editSchedule(schedule, false)" ng-repeat="schedule in schedules track by schedule.id">
+                <md-icon>schedule</md-icon>
+                <div class="md-list-item-text" layout="column">
+                    <h3>{{schedule.id}}</h3>
+                    <h4>Weekdays: <b>{{schedule.weekdays}}</b> From: {{schedule.fromTime}} {{schedule.macroOn}} - To: {{schedule.toTime}} {{schedule.macroOff}}</h4>
+                    <p><i>Period: {{schedule.fromDate}} - {{schedule.toDate}}</i></p>
+                </div>        
+                <md-switch class="md-secondary" ng-model="schedule.enabled" ng-change="toggleSchedule(schedule)"></md-switch>
+                <md-button class="md-icon-button md-secondary" ng-click="editSchedule(schedule, true)"><md-icon>content_copy</md-icon></md-button>
+                <md-button class="md-icon-button md-secondary" ng-click="delSchedule(schedule)"><md-icon>delete</md-icon></md-button>
+        </md-list-item>
+        <md-list-item>
+            <md-button class="md-fab md-secondary" ng-click="editSchedule(null, true)"><md-icon>add</md-icon></md-button>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-subheader><h3>Macros</h3></md-subheader>
+        <md-list-item class="md-3-line md-no-proxy" ng-click="editMacro(macro, false)" ng-repeat="macro in macros track by macro.id">
+            <md-icon>code</md-icon>
+            <div class="md-list-item-text" layout="column">
+                <h3>{{macro.id}}</h3>
+                <h4>Unit: <b>{{macro.unitid}}</b> - Status: <b>{{macro.status}}</b></h4>
+                <p><i>Misc: {{macro.misc}}</i></p>
+            </div>        
+            <md-button class="md-icon-button md-secondary" ng-click="editMacro(macro, true)"><md-icon>content_copy</md-icon></md-button>
+            <md-button class="md-icon-button md-secondary" ng-click="delMacro(macro)"><md-icon>delete</md-icon></md-button>
+        </md-list-item>
+        <md-list-item>
+            <md-button class="md-fab md-secondary" ng-click="editMacro(null, true)"><md-icon>add</md-icon></md-button>
+        </md-list-item>
+        <md-divider></md-divider>
+    </md-list>
+    <md-divider></md-divider>
+    <md-list flex>
+        <md-subheader><h3>Upload / Reset</h3></md-subheader>
+        <md-list-item>
+            <md-button class="md-fab md-primary" ng-click="upload()"><md-icon>system_update_alt</md-icon></md-button>
+            <md-button class="md-fab" ng-click="reset()"><md-icon>clear</md-icon></md-button>
+        </md-list-item>
+        <md-list-item>
+            <md-input-container>
+                <label>Output</label>
+                <textarea 
+                    readonly 
+                    rows="15" 
+                    cols="100" 
+                    style="font-family:monospace;" 
+                    ng-model="command.output">
+                </textarea>
+            </md-input-container>        
+        </md-list-item>
+    </md-list>
+</div>
+
