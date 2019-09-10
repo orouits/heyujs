@@ -9,7 +9,9 @@ The default provided installation configure NGINX to serve the client JS applica
 
 prerequisites for install with provided sript
 - Ubuntu 18.04
-- sudo rights for your current user
+- gcc and auto tools
+- sudo right for your current user
+- download heyu-2.10 sources from http://www.heyu.org/download/ compile and install (=> /usr/local)
 
 packages:
 - python3
@@ -47,6 +49,7 @@ For right management, admin / user rights isolation is in API future plans and w
 This application is in draft mode
 
 Todo:
+- GPL comment banners in sources
 - user/admin right management in API
 - Ansible playbook deployer
 
