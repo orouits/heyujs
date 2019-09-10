@@ -3,7 +3,7 @@ HeyuJS is a web application and API that wraps heyu X10 command line utility for
 
 It is designed as a single page application using Google AngularJS (1.x) and Anguar material calling a Python-Flask API served by UWSGI/python3 engine.
 
-The default provided installation configure NGINX o serve the client JS application and proxy API requests to UWSGI service through a local unix socket.
+The default provided installation configure NGINX to serve the client JS application and proxy API requests to UWSGI service through a local unix socket.
 
 ## Installation
 
