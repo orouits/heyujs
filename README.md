@@ -17,12 +17,14 @@ packages:
 - uwsgi-plugin-python3
 
 download zip from github and:
-- cd heyujs/deploy
-- install.sh
+```bash
+cd heyujs/deploy
+./install.sh
+```
 
 will install and start the application into 
 
-'''/var/www/html/heyujs'''
+```/var/www/html/heyujs```
 
 ## access
 
