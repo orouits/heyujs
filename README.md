@@ -8,7 +8,7 @@ The default provided installation configure NGINX o serve the client JS applicat
 ## Installation
 
 prerequisites for install with provided sript
-- Ubuntu 18.04 (but ma)
+- Ubuntu 18.04
 - sudo rights for your current user
 
 packages:
