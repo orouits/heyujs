@@ -42,9 +42,9 @@ def loadFile2List(fname):
     return lines
 
 def runCommand2List(cmd):
-    print('Command2List ' + cmd )
+    #print('Command2List ' + cmd )
     output = subprocess.check_output(cmd, shell=True, encoding='utf-8').strip()
-    print('Command2List out: ' + output)
+    #print('Command2List out: ' + output)
     lines = []
     for line in output.split('\n'):
         line = line.strip()
