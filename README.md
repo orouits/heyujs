@@ -24,7 +24,7 @@ cd heyujs/deploy
 ```
 change **server_name** of NGINX heyujs.conf file in order to avoid conflicts with existing
 
-lauch install
+launch install
 ```bash
 ./install.sh
 ```
