@@ -45,7 +45,7 @@ A fake configuration is provided. The application allows to manage your whole co
 
 ## security
 
-The application do not implement any flow encryption (HTTPS) not authentication nor right mechanism.
+The application do not implement any flow encryption (HTTPS) nor authentication nor right mechanism.
 Use the reverse proxy (NGINX) in order to implement these security features.
 For right management, admin / user rights isolation is in API future plans and will rely on reverse proxy generated request headers transmitted to the API.
 
