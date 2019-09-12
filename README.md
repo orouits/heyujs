@@ -47,7 +47,7 @@ A fake configuration is provided. The application allows to manage your whole co
 
 The application do not implement any flow encryption (HTTPS) nor authentication nor right mechanism.
 Use the reverse proxy (NGINX) in order to implement these security features.
-RBAC system of API is in future plans. It will rely on reverse proxy generated request headers transmitted to the API in order to provide user/admin information of the current identity connected.
+RBAC system of API is in future plans. It will rely on reverse proxy request headers added to the API call in order to provide user/admin information of the current identity connected.
 
 ## status
 
