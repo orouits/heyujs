@@ -18,9 +18,14 @@ packages:
 - nginx-full
 - uwsgi-plugin-python3
 
-download zip from github and:
+download zip from github and go to deploy directory
 ```bash
 cd heyujs/deploy
+```
+change **server_name** of NGINX heyujs.conf file in order to avoid conflicts with existing
+
+launch install
+```bash
 ./install.sh
 ```
 
@@ -40,9 +45,9 @@ A fake configuration is provided. The application allows to manage your whole co
 
 ## security
 
-The application do not implement any flow encryption (HTTPS) not authentication nor right mechanism.
+The application do not implement any flow encryption (HTTPS) nor authentication nor right mechanism.
 Use the reverse proxy (NGINX) in order to implement these security features.
-For right management, admin / user rights isolation is in API future plans and will rely on reverse proxy generated request headers transmitted to the API.
+RBAC system of API is in future plans. It will rely on reverse proxy request headers added to the API call in order to provide user/admin information of the current identity connected.
 
 ## status
 
